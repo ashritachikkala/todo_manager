@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   # GET /users or /users.json
   def index
     #@users = User.all
-    render plain: User.order(:id).map {|user| user.to_display_user }.join("\n")
+    render plain: User.order(:id).map { |user| user.to_display_user }.join("\n")
   end
 
   # GET /users/1 or /users/1.json
@@ -13,7 +13,6 @@ class UsersController < ApplicationController
     id = params[:id]
     user = Users.find(id)
     render plain: user.to_display_user
-    
   end
 =begin
   # GET /users/new
