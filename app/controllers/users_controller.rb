@@ -1,15 +1,21 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: %i[ show edit update destroy ]
+  #before_action :set_user, only: %i[ show edit update destroy ]
+  skip_before_action :verify_authenticity_token
 
   # GET /users or /users.json
   def index
-    @users = User.all
+    #@users = User.all
+    render plain: User.order(:id).map {|user| user.to_display_user }.join("\n")
   end
 
   # GET /users/1 or /users/1.json
   def show
+    id = params[:id]
+    user = Users.find(id)
+    render plain: user.to_display_user
+    
   end
-
+=begin
   # GET /users/new
   def new
     @user = User.new
@@ -18,9 +24,26 @@ class UsersController < ApplicationController
   # GET /users/1/edit
   def edit
   end
-
+=end
   # POST /users or /users.json
   def create
+    name = params[:name]
+    email = params[:email]
+    password = params[:password]
+    new_user = User.create!(name: name, email: email, password: password)
+    response_text = "New User created with id #{new_user.id}"
+    render plain: response_text
+  end
+
+  def login
+    email = params[:email]
+    password = params[:password]
+    find_user = User.all.where(email: email, password: password)
+    display_text = find_user.empty? ? "false" : "true"
+    render plain: display_text
+  end
+
+=begin
     @user = User.new(user_params)
 
     respond_to do |format|
@@ -32,7 +55,7 @@ class UsersController < ApplicationController
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
-  end
+
 
   # PATCH/PUT /users/1 or /users/1.json
   def update
@@ -66,4 +89,5 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:name, :email, :password)
     end
+=end
 end
