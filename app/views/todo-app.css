@@ -1,0 +1,114 @@
+body{
+    max-width: 500px;
+    margin: 0 auto;
+    color: #453C52;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.TodoPage-title{
+    font-size: 20px;
+    line-height: 1.4;
+    font-weight: bold;
+    margin-top: 60px;
+    margin-bottom: 12px;
+
+}
+
+.AddTodo{
+    display: flex;
+    justify-content: space-between;
+    flex: wrap;   
+}
+
+.AddTodo-text{
+    font-size: 14px;
+    color: #726A7E;
+    padding: 6px 12px;
+    margin-right: 10px;
+    border-radius: 4px 4px 4px;
+    border: 1px solid #BFB8CC;
+
+}
+
+.AddTodo-date{
+    font-size: 14px;
+    color: #726A7E;
+    padding: 6px 12px;
+    margin-right: 11px;
+    border-radius: 4px 4px 4px;
+    border: 1px solid #BFB8CC;
+}
+
+.AddTodo-button{
+    font-size: 14px;
+    color: white;
+    background-color: #48BB78;
+    border: 1px solid white;
+    padding: 6px 22px;
+    border-radius: 4px 4px 4px;
+
+}
+
+.TodoSection{
+    margin-bottom: 20px;
+    
+}
+
+.TodoSectionTitle{
+    display: flex;
+    align-items: center;
+    margin-top: 24px;
+    margin-bottom: 11px;
+    margin-right: 8px;
+    color: #453C52;
+}
+
+.TodoSectionTitle-text{
+    font-weight: bold;
+    font-size: 14px;
+    margin-right: 8px;
+}
+
+.TodoSectionTitle-remainingCount{
+    font-size: 12px;
+
+}
+
+.TodoItem-container{
+    display: flex;
+    align-items: center;
+    font-size: 14px; 
+    margin-left: 8px;
+    margin-bottom: 19px;
+}
+
+TodoItem-checkbox{
+    border: 1px solid #BFB8CC;
+    border-radius: 4px 4px;
+    margin-left: 8px;
+    width: 16px;
+    height: 16px;
+    align-items: center;
+}
+.TodoItem-Overduelabel{
+    color: #C53030;
+    font-size: 12px;
+    margin-left: 10px;
+}
+.TodoItem-delete{
+    background-color: #F1EDF7 ;
+    border-radius: 4px 4px;
+    margin-left: 8px;
+
+    align-content: center;
+}
+.TodoItem-text{
+    margin-left: 8px;
+}
+.TodoItem-date{
+    color: #726A7E;
+    margin-left: 8px;
+    font-size: 12px;
+}
+
+
