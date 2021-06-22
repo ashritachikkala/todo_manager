@@ -91,9 +91,10 @@ body{
     align-items: center;
 }
 
+
 .TodoItem-delete > img {
     align-items: center;
-    width: 12px;
+    width: 16px;
 }
 
 .TodoItem-delete{
@@ -107,6 +108,12 @@ body{
 
 .TodoItem-text {
     margin-left: 8px;
+}
+
+.TodoItem-completedtext{
+    margin-left: 8px;
+    text-decoration: line-through;
+
 }
 
 .TodoItem-dueDate{

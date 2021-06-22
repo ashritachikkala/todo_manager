@@ -6,16 +6,35 @@
     <ul>
         <% todos.each do |todo| %>
             <li class="TodoItem">
-                <label class="TodoItem-container">
-                    <input class="TodoItem-checkbox" type="checkbox">
-                    <p class="TodoItem-text"><%= todo.todo_text %></p>
-                    <% if show_due_date%>
-                        <p class="TodoItem-dueDate"><%= todo.due_date.to_s(:short) %></p>
-                    <%end%>
-                    <a href="javascript:void(0)" class="TodoItem-delete">
-                        <img src="delete.png"/>
-                    </a>
-                </label>
+                <% if section_title == "Overdue" && !todo.completed %>
+                    <label class="TodoItem-container">
+                        <input class="TodoItem-checkbox" type="checkbox">
+                        <p class="TodoItem-text"><%= todo.todo_text %></p>
+                        <% if show_due_date%>
+                            <p class="TodoItem-dueDate"><%= todo.due_date.to_s(:short) %></p>
+                        <%end%>
+                        <a href="javascript:void(0)" class="TodoItem-delete">
+                            <img src="delete.png"/>
+                        </a>
+                    </label>
+                <% elsif section_title == "Due Today" || section_title == "Due Later" %>
+                    <label class="TodoItem-container">
+                        <% if todo.completed %>
+                            <input class="TodoItem-checkbox" type="checkbox" value="1" checked>
+                            <p class="TodoItem-completedtext"><%= todo.todo_text %></p>
+                        <%else%>
+                            <input class="TodoItem-checkbox" type="checkbox" value="2">
+                            <p class="TodoItem-text"><%= todo.todo_text %></p>
+                        <%end%>
+                        
+                        <% if show_due_date%>
+                            <p class="TodoItem-dueDate"><%= todo.due_date.to_s(:short) %></p>
+                        <%end%>
+                        <a href="javascript:void(0)" class="TodoItem-delete">
+                            <img src="delete.png"/>
+                        </a>
+                    </label>
+                <%end%>
             </li>
         <% end %>
     </ul>
