@@ -92,14 +92,12 @@ body{
 }
 
 
-.TodoItem-delete > img {
-    align-items: center;
-    width: 16px;
-}
+
 
 .TodoItem-delete{
     visibility: hidden;
     margin-left: 8px;
+    
 }
 
 .TodoItem-container:hover .TodoItem-delete{
@@ -110,7 +108,7 @@ body{
     margin-left: 8px;
 }
 
-.TodoItem-completedtext{
+.TodoItem-completedText{
     margin-left: 8px;
     text-decoration: line-through;
 
