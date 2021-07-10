@@ -16,8 +16,12 @@
         Welcome
         <%= @current_user.first_name%>
         <%= link_to "Sign-out", destroy_session_path, method: "delete"%>
+      </p>  
+    <% end %>
+    <% if flash[:error] %>
+      <p class="Flash-error">
+        <%= flash[:error] %>
       </p>
-      
     <% end %>
     <%= yield %>
   </body>

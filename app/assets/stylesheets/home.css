@@ -8,3 +8,23 @@
     justify-content: space-between;
 
 }
+
+.Flash-error {
+    font-size: 14px;
+    color: red;
+    margin-top: 10px;
+    margin-top: 10px;
+}
+
+.Home-welcome {
+    font-size: large;
+    font-style: initial;
+    margin-top: 20px;
+    margin-bottom: 15px;
+}
+
+.Home-text {
+    font-size: 20px;
+    color: darkslategray;
+    margin-bottom: 10px;
+}
