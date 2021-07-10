@@ -17,7 +17,7 @@ class UsersController < ApplicationController
   def create
     user = User.new(first_name: params[:first_name], last_name: params[:last_name], email: params[:email], password: params[:password])
     if user.save
-      redirect_to "/"
+      redirect_to "/todos"
       session[:current_user_id] = user.id
     else
       flash[:error] = user.errors.full_messages.join(", ")
