@@ -17,8 +17,10 @@ class UsersController < ApplicationController
   def create
     new_user = User.new(first_name: params[:first_name], last_name: params[:last_name], email: params[:email], password: params[:password])
     if new_user.save
+      user = User.find_by(email: params[:email])
+      session[:current_user_id] = user.id
       redirect_to todos_path
-      session[:current_user_id] = new_user.id
+      
     else
       flash[:error] = user.errors.full_messages.join(", ")
       redirect_to "/users/new"
