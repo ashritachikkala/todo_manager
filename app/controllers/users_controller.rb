@@ -1,9 +1,10 @@
 class UsersController < ApplicationController
   skip_before_action :ensure_user_logged_in
+
   def new
     render "users/new"
   end
-  
+
   def index
     render plain: User.order(:id).map { |user| user.to_display_user }.join("\n")
   end
@@ -20,7 +21,6 @@ class UsersController < ApplicationController
       user = User.find_by(email: params[:email])
       session[:current_user_id] = user.id
       redirect_to todos_path
-      
     else
       flash[:error] = new_user.errors.full_messages.join(", ")
       redirect_to "/users/new"
